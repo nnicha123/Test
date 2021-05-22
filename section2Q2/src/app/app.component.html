@@ -1,0 +1,11 @@
+<p>Type into input box to filter</p>
+<input type="text" [(ngModel)]="filterText">
+<table>
+  <tr>
+    <th>Categories</th>
+  </tr>
+  <tr *ngFor="let category of categories | filterText : filterText">
+    <td>{{category}}</td>
+  </tr>
+
+</table>
