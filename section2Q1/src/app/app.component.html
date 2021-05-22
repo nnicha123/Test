@@ -1,0 +1,16 @@
+<div class="outer">
+  <div class="col-1">
+    <input type="number" [(ngModel)]="num">
+    <button (click)="onRound()">Round</button>
+    <div *ngIf="showResult">Result : {{result}}</div>
+  </div>
+  <div class="col-2">
+    <div [formGroup]="calculationForm">
+      <select formControlName="calculation">
+        <option *ngFor="let cal of calculationList">{{cal}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3" *ngIf="calculationForm.value.calculation==='isFibonacci'">{{checkFibonacci(result)}}</div>
+  <div class="col-3" *ngIf="calculationForm.value.calculation==='isPrime'">{{checkPrime(result)}}</div>
+</div>
