@@ -9,10 +9,18 @@ import { GetCategoriesService } from './get-categories.service';
 })
 export class AppComponent {
   filterText:string;
-  categories:any;
+  categories:string[];
   constructor(private getCategoriesService:GetCategoriesService){
-    this.getCategoriesService.getCategories().pipe(take(1),map(categories => this.categories = categories)).subscribe();
+    this.initCategories();
   }
+
+  private initCategories(){
+    this.getCategoriesService.getCategories()
+    .pipe(
+      take(1),
+      map(categories => this.categories = categories)
+      ).subscribe();
+  }  
 
 
 }
