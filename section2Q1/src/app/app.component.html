@@ -11,6 +11,6 @@
       </select>
     </div>
   </div>
-  <div class="col-3" *ngIf="calculationForm.value.calculation==='isFibonacci'">{{checkFibonacci(result)}}</div>
-  <div class="col-3" *ngIf="calculationForm.value.calculation==='isPrime'">{{checkPrime(result)}}</div>
+  <div class="col-3" *ngIf="calculation==='isFibonacci'">{{checkFibonacci(result)}}</div>
+  <div class="col-3" *ngIf="calculation==='isPrime'">{{checkPrime(result)}}</div>
 </div>

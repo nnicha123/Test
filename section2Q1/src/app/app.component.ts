@@ -40,10 +40,14 @@ export class AppComponent {
     const sqrt2 = Math.sqrt(num2);
     return Math.ceil(sqrt1) === Math.floor(sqrt1) || Math.ceil(sqrt2) === Math.floor(sqrt2)
   }
+
+  get calculation(){
+    return this.calculationForm.get('calculation').value;
+  }
   
 
   calculationForm = new FormGroup({
-    calculation: new FormControl('',Validators.required)
+    calculation: new FormControl('isPrime',Validators.required)
   });
 
   
