@@ -1,0 +1,5 @@
+<!-- I think the memory leak is caused in this line 
+    newDialog.parentElement.removeChild(newDialog);
+
+    as the statement doesn't remove unused elements after it is not needed anymore, hence the memory leak
+-->
